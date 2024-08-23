@@ -57,7 +57,7 @@ export default function ChatBot() {
                 {
                     role: "user",
                     parts: [
-                        { text: "Ràng buộc: 1.Chỉ thảo luận về các vấn đề liên quan đến Việt Nam.\n 2.Tuân thủ định dạng đầu ra đã được cung cấp.\n3.Sử dụng ngôn ngữ tiếng Việt.\n\n Bắt buộc trả lời là: 'Tôi không biết, tôi chỉ thảo luận các vấn đề liên quan đến Việt Nam' nếu vi phạm các ràng buộc trên." }
+                        { text: "Ràng buộc: 1.Chỉ thảo luận về các vấn đề liên quan lịch sử, kinh tế, chính trị, văn hóa của Việt Nam.\n 2.Tuân thủ định dạng đầu ra đã được cung cấp.\n3.Sử dụng ngôn ngữ tiếng Việt.\n\n Bắt buộc trả lời là: 'Tôi không biết, tôi chỉ thảo luận các vấn đề liên quan đến Việt Nam' nếu vi phạm các ràng buộc trên." }
                     ],
                 },
                 {
