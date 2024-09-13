@@ -25,12 +25,12 @@ export default function ChatBot() {
     const createChatLi = (message, className) => {
         const chatLi = document.createElement("li");
         chatLi.classList.add("chat", className);
-        const chatContent = className === "outgoing" 
-            ? `<p></p>` 
+        const chatContent = className === "outgoing"
+            ? `<p></p>`
             : `<span class='material-symbols-outlined'>smart_toy</span>${marked(message)}`;
-        
+
         chatLi.innerHTML = chatContent;
-        if(className === "outgoing") chatLi.querySelector("p").textContent = message;
+        if (className === "outgoing") chatLi.querySelector("p").textContent = message;
         return chatLi;
     };
 
@@ -43,29 +43,13 @@ export default function ChatBot() {
                 {
                     role: "user",
                     parts: [
-                        { text: "Nhân vật: chuyên gia AI về Việt Nam, cung cấp thông tin và hỗ trợ cho các vấn đề liên quan đến văn hóa, lịch sử, địa lý và các khía cạnh khác của Việt Nam." }
+                        { text: "Bạn là một AI chuyên gia về lịch sử, văn hóa và kinh tế của Việt Nam, từ thời kỳ cổ đại đến hiện đại. Bạn cung cấp thông tin chi tiết về các sự kiện lịch sử quan trọng, những thay đổi văn hóa qua các giai đoạn, và quá trình phát triển kinh tế của đất nước. Bạn cũng có thể thảo luận về các chính sách kinh tế trong thời kỳ Đổi Mới và tầm ảnh hưởng của Việt Nam trên trường quốc tế. Lưu ý rằng bạn chỉ được phép trả lời các câu hỏi liên quan đến Việt Nam và không đề cập đến bất kỳ quốc gia hay khu vực nào khác trừ khi có sự liên quan trực tiếp đến Việt Nam." },
                     ],
                 },
                 {
                     role: "model",
                     parts: [
-                        {
-                            text: "Chào bạn! Tôi là một chuyên gia AI về Việt Nam. Tôi có thể cung cấp thông tin và hỗ trợ cho các vấn đề liên quan đến văn hóa, lịch sử, địa lý và các khía cạnh khác của Việt Nam. \n\nHãy hỏi tôi bất cứ điều gì bạn muốn biết về Việt Nam!\n\n**Ví dụ:**\n\n* Bạn có thể hỏi tôi về lịch sử chiến tranh Việt Nam.\n* Bạn có thể hỏi tôi về những địa điểm du lịch nổi tiếng ở Việt Nam.\n* Bạn có thể hỏi tôi về văn hóa ẩm thực của Việt Nam.\n* ...\n\nTôi sẽ cố gắng hết sức để cung cấp cho bạn những thông tin chính xác và hữu ích nhất. \n\n**Hãy nhớ rằng, tôi chỉ thảo luận về các vấn đề liên quan đến Việt Nam và sẽ luôn tuân thủ định dạng đầu ra này.**\n",
-                        }
-                    ],
-                },
-                {
-                    role: "user",
-                    parts: [
-                        { text: "Ràng buộc: 1.Chỉ thảo luận về các vấn đề liên quan lịch sử, kinh tế, chính trị, văn hóa của Việt Nam.\n 2.Tuân thủ định dạng đầu ra đã được cung cấp.\n3.Sử dụng ngôn ngữ tiếng Việt.\n\n Bắt buộc trả lời là: 'Tôi không biết, tôi chỉ thảo luận các vấn đề liên quan đến Việt Nam' nếu vi phạm các ràng buộc trên." }
-                    ],
-                },
-                {
-                    role: "model",
-                    parts: [
-                        {
-                            text: "Tôi hiểu rồi. Hãy cho tôi biết vấn đề bạn muốn thảo luận về Việt Nam nhé! Tôi sẽ cố gắng hết sức để trả lời bạn theo định dạng đầu ra bạn cung cấp.",
-                        }
+                        { text: "Chào mừng bạn! Tôi là một AI chuyên gia về Việt Nam, được đào tạo để cung cấp thông tin chi tiết về lịch sử, văn hóa và kinh tế của đất nước hình chữ S, từ thời kỳ dựng nước cho đến hiện tại. \n\nTôi có thể hỗ trợ bạn tìm hiểu về:\n\n* **Lịch sử Việt Nam:** Các triều đại phong kiến, các cuộc kháng chiến chống ngoại xâm, quá trình thống nhất đất nước, và các sự kiện quan trọng khác.\n* **Văn hóa Việt Nam:** Các phong tục tập quán, tín ngưỡng tôn giáo, nghệ thuật truyền thống (như âm nhạc, hội họa, sân khấu), văn học, ẩm thực, và sự biến đổi văn hóa qua các thời kỳ.\n* **Kinh tế Việt Nam:**  Nền kinh tế nông nghiệp truyền thống, quá trình công nghiệp hóa, hiện đại hóa, các chính sách kinh tế trong thời kỳ Đổi Mới, hội nhập kinh tế quốc tế, và triển vọng phát triển kinh tế. \n\nTôi cũng có thể phân tích và thảo luận về:\n\n* Tầm ảnh hưởng của các sự kiện lịch sử lên văn hóa và kinh tế Việt Nam.\n* Vai trò của văn hóa trong quá trình phát triển kinh tế - xã hội.\n* Những thành tựu và thách thức của Việt Nam trong thời kỳ hội nhập quốc tế.\n\nHãy đặt câu hỏi cho tôi về bất kỳ chủ đề nào liên quan đến Việt Nam. Tôi sẽ cố gắng hết sức để cung cấp cho bạn những thông tin chính xác, khách quan và đầy đủ nhất dựa trên kiến thức mà tôi được huấn luyện. \n\nXin lưu ý rằng tôi chỉ được phép trả lời các câu hỏi liên quan đến Việt Nam. Tôi sẽ không đề cập đến bất kỳ quốc gia hay khu vực nào khác, trừ khi có sự liên quan trực tiếp và cần thiết đến nội dung câu hỏi về Việt Nam.\n\nHãy bắt đầu khám phá Việt Nam cùng tôi! \n" },
                     ],
                 },
             ]
@@ -74,7 +58,7 @@ export default function ChatBot() {
             let result = await chatSession.sendMessage(userMessage);
             messageElement.innerHTML = marked(result.response.text());
             chatbox.scrollTo(0, chatbox.scrollHeight);
-        } catch (e){
+        } catch (e) {
             console.error(e);
             messageElement.textContent = "Ngoại lệ";
             chatbox.scrollTo(0, chatbox.scrollHeight);
@@ -115,9 +99,6 @@ export default function ChatBot() {
                     <li className='chat incoming'>
                         <span className='material-symbols-outlined'>smart_toy</span>
                         <p>Hi there <br /> How can I help you today?</p>
-                    </li>
-                    <li className='chat outgoing'>
-                        <p>Lorem ipsum dolor sit</p>
                     </li>
                 </ul>
                 <div className="chat-input">
